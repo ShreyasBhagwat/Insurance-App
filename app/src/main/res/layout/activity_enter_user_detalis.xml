@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnterUserDetalis"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compare and save money on car Insurance"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/carNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Car Number"/>
+
+    <EditText
+        android:id="@+id/carComapny"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Car company"/>
+
+    <EditText
+        android:id="@+id/carModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Car Model"/>
+
+    <EditText
+        android:id="@+id/engineNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Engine No."/>
+
+
+    <EditText
+        android:id="@+id/chassisNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chassis No."/>
+
+
+    <EditText
+        android:id="@+id/yearOfMfg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year of Mfg."/>
+
+    <EditText
+        android:id="@+id/fuelType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fuel Type"/>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"/>
+
+
+</LinearLayout>
