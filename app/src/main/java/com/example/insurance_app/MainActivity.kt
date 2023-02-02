@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else{
                    // Log.d("MainActivity",email.text.trim().toString())
-                    startActivity(Intent(this@MainActivity,PolicyList::class.java))
+                    startActivity(Intent(this@MainActivity,UserDashboardActivity::class.java))
                 }
             }
             else{
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                         .show()
                 }
                 else
-                    startActivity(Intent(this@MainActivity,PolicyList::class.java))
+                    startActivity(Intent(this@MainActivity,UserDashboardActivity::class.java))
             }
 
         }
