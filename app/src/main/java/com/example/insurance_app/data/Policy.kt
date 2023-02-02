@@ -11,6 +11,7 @@ data class Policy(
     @ColumnInfo(name = "PolicyName") val userName:String,
     @ColumnInfo(name = "PolicyAdmin") val policyAdmin:String,
     @ColumnInfo(name = "YearOfPub") val yearOfPub:Date,
+    @ColumnInfo(name = "Validity") val policyValidity:String,
     @ColumnInfo(name = "Price") val price:Double,
     @ColumnInfo(name = "Status") val status:String
 ){
