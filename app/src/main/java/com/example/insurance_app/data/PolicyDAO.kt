@@ -1,18 +1,24 @@
 package com.example.insurance_app.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
-public interface PolicyDAO {
+interface PolicyDAO {
     @Insert
-    fun insertAll(vararg policies:Policy)
+    suspend fun insertAll(vararg policies:Policy)
+
+    @Insert
+    suspend fun insert(policy: Policy)
 
     @Delete
-    fun delete(policy:Policy)
-
-    @Update
-    fun update(policy:Policy)
+    suspend fun delete(policy:Policy)
 
     @Query("SELECT * FROM policy order by PolicyName")
-    fun getAll():List<Policy>
+    fun getAll():LiveData<List<Policy>>
+
+    @Update
+    suspend fun update(policy:Policy)
+
+
 }

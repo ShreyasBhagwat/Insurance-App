@@ -7,11 +7,11 @@ import java.util.Date
 
 @Entity
 data class Policy(
-    @PrimaryKey val policyID:String,
-    @ColumnInfo(name = "PolicyName") val userName:String,
-    @ColumnInfo(name = "PolicyAdmin") val policyAdmin:String,
-    @ColumnInfo(name = "YearOfPub") val yearOfPub:Date,
-    @ColumnInfo(name = "Validity") val policyValidity:String,
+    @PrimaryKey val policyID:Int,
+    @ColumnInfo(name = "PolicyName") val policyName:String,
+//    @ColumnInfo(name = "PolicyAdmin") val policyAdmin: String,
+    @ColumnInfo(name = "DateOfClaim") val dateOfClaim:Date,
+    @ColumnInfo(name = "Validity") val policyValidity:Int,
     @ColumnInfo(name = "Price") val price:Double,
     @ColumnInfo(name = "Status") val status:String
 ){

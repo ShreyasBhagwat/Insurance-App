@@ -1,18 +1,22 @@
 package com.example.insurance_app.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 public interface VehicleDAO {
     @Insert
-    fun insertAll(vararg vehicles:Vehicle)
+    suspend fun insertAll(vararg vehicles:Vehicle)
+
+    @Insert
+    suspend fun insert(vehicle: Vehicle)
 
     @Delete
-    fun delete(vehicle:Vehicle)
+    suspend fun delete(vehicle:Vehicle)
 
     @Update
-    fun update(vehicle:Vehicle)
+    suspend fun update(vehicle:Vehicle)
 
     @Query("SELECT * FROM vehicle order by VehicleMake")
-    fun getAll():List<Vehicle>
+    fun getAll(): LiveData<List<Vehicle>>
 }

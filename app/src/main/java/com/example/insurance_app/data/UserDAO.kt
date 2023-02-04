@@ -1,18 +1,22 @@
 package com.example.insurance_app.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 public interface UserDAO {
-    @Insert
-    fun insertAll(vararg users:User)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(users: List<User>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(users:User)
 
     @Delete
-    fun delete(user:User)
+    suspend fun delete(user:User)
 
     @Update
-    fun update(user:User)
+    suspend fun update(user:User)
 
-    @Query("SELECT * FROM user order by UserName")
-    fun getAll():List<User>
+    @Query("SELECT * FROM user")
+    fun getAll():LiveData<List<User>>
 }
