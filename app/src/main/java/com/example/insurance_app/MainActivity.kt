@@ -1,14 +1,23 @@
 package com.example.insurance_app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
+import android.content.SharedPreferences.Editor
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
+    lateinit var sharedPreferences:SharedPreferences
+    lateinit var sharedPreferencesEditor: Editor
+    lateinit var sharedPreferencesLogin:SharedPreferences
+    lateinit var sharedPreferencesLoginEditor: Editor
+    val credentials=Credentials()
+    var isValid:Boolean=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,9 +27,26 @@ class MainActivity : AppCompatActivity() {
         val logInLayout:LinearLayout=findViewById(R.id.logInLayout)
         val singIn:Button=findViewById(R.id.singIn)
         val email:EditText=findViewById(R.id.eMail)
+        val signupeMail:EditText=findViewById(R.id.signupeMails)
         val password:EditText=findViewById(R.id.passwords)
-        val confirmPassword:EditText=findViewById(R.id.passwordss)
+        val signupPassword:EditText=findViewById(R.id.passwordss)
+        val confirmPassword:EditText=findViewById(R.id.confirmpasswords)
         var loginFlag:Boolean=true
+        sharedPreferences=application.getSharedPreferences("CredentialsDB", MODE_PRIVATE)
+        sharedPreferencesEditor=sharedPreferences.edit()
+
+        sharedPreferencesLogin = getSharedPreferences("login",MODE_PRIVATE);
+        if(sharedPreferencesLogin.getBoolean("logged",false)){
+            goToUserDashboardActivity();
+        }
+        if(sharedPreferences!=null){
+            var preferencesMap:Map<String,*> = sharedPreferences.all as Map<String, String>
+            if(preferencesMap.size!=0)
+                credentials.loadCredentials(preferencesMap)
+            for(i in preferencesMap){
+                Log.d("MainActivity ","MAP -> key= ${i.key} value = ${i.value}")
+            }
+        }
 
         singUp.setOnClickListener {
             singUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
@@ -43,25 +69,79 @@ class MainActivity : AppCompatActivity() {
             logIn.setTextColor(resources.getColor(R.color.textColor,null))
         }
         singIn.setOnClickListener {
+
             if(loginFlag) {
                 if (TextUtils.isEmpty(email.text.toString()) && TextUtils.isEmpty(password.text.toString())) {
                     Toast.makeText(this, "Mail and Password is mandatory field", Toast.LENGTH_SHORT)
                         .show()
                 }
                 else{
-                   // Log.d("MainActivity",email.text.trim().toString())
-                    startActivity(Intent(this@MainActivity,UserDashboardActivity::class.java))
+                    checkUserDetails(email.text.toString(),password.text.toString())
                 }
+                Log.d("MainActivity ","From LogIn -> UserName = ${email.text.toString()} UserPassword = ${password.text.toString()} confirm pass= ${confirmPassword.text.toString()}")
             }
             else{
-                if (TextUtils.isEmpty(email.text.toString()) && TextUtils.isEmpty(password.text.toString()) &&TextUtils.isEmpty(confirmPassword.text.toString())) {
+                if (TextUtils.isEmpty(signupeMail.text.toString()) && TextUtils.isEmpty(signupPassword.text.toString()) &&TextUtils.isEmpty(confirmPassword.text.toString())) {
                     Toast.makeText(this, "Mail and Password is mandatory field", Toast.LENGTH_SHORT)
                         .show()
                 }
-                else
-                    startActivity(Intent(this@MainActivity,UserDashboardActivity::class.java))
+                else if((signupPassword.text.toString()) != (confirmPassword.text.toString())){
+                    Toast.makeText(this, "Passwords are not matching", Toast.LENGTH_SHORT)
+                        .show()
+                }
+                else{
+                    addUserLoginData(signupeMail.text.toString(),signupPassword.text.toString())
+                }
+                Log.d("MainActivity ","From Signup -> UserName = ${signupeMail.text.toString()} UserPassword = ${password.text.toString()} confirm pass= ${confirmPassword.text.toString()}")
             }
-
         }
+    }
+
+    private fun goToUserDashboardActivity() {
+        startActivity(Intent(this@MainActivity,UserDashboardActivity::class.java))
+        finish()
+    }
+
+    private fun addUserLoginData(userName: String, userPassword: String) {
+
+        if (credentials.checkUsername(userName)) {
+            Toast.makeText(this@MainActivity, "Username already taken!", Toast.LENGTH_SHORT)
+                .show()
+        } else {
+            credentials.addCredentials(userPassword, userPassword)
+
+            sharedPreferencesEditor.putString(userName, userPassword)
+            sharedPreferencesEditor.putString("LastSavedUsername", "")
+            sharedPreferencesEditor.putString("LastSavedPassword", "")
+
+            sharedPreferencesEditor.apply()
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+//            sharedPreferencesLogin.edit().putBoolean("logged",true).apply();
+        }
+
+    }
+
+    private fun checkUserDetails(userName: String, userPassword: String) {
+
+        isValid = validate(userName, userPassword);
+
+        if(!isValid){
+            Toast.makeText(this, "Incorrect credentials entered!", Toast.LENGTH_SHORT).show();
+            }
+        else {
+            Toast.makeText(this@MainActivity, "Login successful!", Toast.LENGTH_SHORT).show()
+            sharedPreferencesEditor.putString("LastSavedUsername", userName)
+            sharedPreferencesEditor.putString("LastSavedPassword", userPassword)
+            sharedPreferencesEditor.apply()
+
+            goToUserDashboardActivity()
+            sharedPreferencesLogin.edit().putBoolean("logged",true).apply();
+        }
+
+    }
+
+    private fun validate(name:String,password:String): Boolean {
+        return credentials.checkCredentials(name, password);
     }
 }

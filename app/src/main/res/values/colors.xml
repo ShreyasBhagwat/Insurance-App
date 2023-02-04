@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#ECE5EC</color>
+    <color name="vehiclecardView">#E396D9</color>
+    <color name="green">#137706</color>
     <color name="pinkColor">#FF003B</color>
     <color name="tansparentColor">#00FFFFFF</color>
     <color name="insurancecolor">#1F0075</color>

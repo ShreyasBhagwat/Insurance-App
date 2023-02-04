@@ -175,7 +175,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:inputType="textPersonName|textEmailAddress"
-                        android:id="@+id/eMails"
+                        android:id="@+id/signupeMails"
                         android:ems="10"
                         android:textSize="13sp"
                         android:textColor="@color/black"
@@ -185,6 +185,7 @@
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signupPasswoard"
                     android:hint="Password"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
@@ -225,7 +226,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:inputType="textPassword"
-                        android:id="@+id/passwords01"
+                        android:id="@+id/confirmpasswords"
                         android:ems="10"
                         android:textSize="13sp"
                         android:textColor="@color/black"
