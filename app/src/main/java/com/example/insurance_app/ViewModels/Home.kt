@@ -52,11 +52,11 @@ class Home : Fragment() {
         // Inflate the layout for this fragment
        val view=inflater.inflate(R.layout.fragment_home, container, false )
 
-        val carbtn:Button=view.findViewById(R.id.btnVehicle)
-        carbtn.setOnClickListener{
-            val btn:String="Car"
-           openRegistrationNumberBottomScreen(btn)
-        }
+//        val carbtn:Button=view.findViewById(R.id.btnVehicle)
+//        carbtn.setOnClickListener{
+//            val btn:String="Car"
+//           openRegistrationNumberBottomScreen(btn)
+//        }
 //        val bikebtn:CardView=view.findViewById(R.id.btnVehicle)
 //        carbtn.setOnClickListener{
 //            val btn:String="Bike"

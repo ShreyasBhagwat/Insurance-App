@@ -29,6 +29,7 @@ class UserDashboardActivity : AppCompatActivity() {
                     R.id.home -> replaceFragment(Home())
                     R.id.policy -> replaceFragment(Policy())
                     R.id.help -> replaceFragment(Help())
+                    R.id.Profile -> replaceFragment(Profile())
 
                     else -> {
 

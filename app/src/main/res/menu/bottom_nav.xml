@@ -10,4 +10,7 @@
     <item android:title="Help"
         android:id="@+id/help"
         android:icon="@drawable/ic_baseline_help_24"/>
+    <item android:title="Profile"
+        android:id="@+id/Profile"
+        android:icon="@drawable/ic_baseline_manage_accounts_24"/>
 </menu>
