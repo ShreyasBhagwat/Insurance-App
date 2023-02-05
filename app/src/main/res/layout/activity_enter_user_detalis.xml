@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EnterUserDetails"
+    tools:context=".EnterDetails"
+    android:background="@drawable/background_main"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
 
-        <TextView
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Compare and save money on car Insurance"
-            android:textSize="30dp" />
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="163dp">
+
+            <TextView
+                android:id="@+id/enterDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compare and save money on car Insurance"
+                android:textColor="#ffffff"
+                android:textSize="28dp"
+                android:padding="8dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_background"
+            android:padding="20dp">
+
 
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="Enter Car Registration Number"
+            android:id="@+id/carNumberPreview"
+            android:hint="Enter Registration Number"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
@@ -29,7 +58,8 @@
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textPersonName|textEmailAddress"
@@ -40,11 +70,12 @@
                 android:textStyle="normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="Enter car company name"
+            android:hint="Enter company name"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
@@ -54,7 +85,8 @@
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textPersonName|textEmailAddress"
@@ -65,11 +97,12 @@
                 android:textStyle="normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="Enter car model"
+            android:hint="Enter model"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
@@ -79,7 +112,8 @@
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textPersonName|textEmailAddress"
@@ -90,11 +124,12 @@
                 android:textStyle="normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="Enter car engine number"
+            android:hint="Enter engine number"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
@@ -104,7 +139,8 @@
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textPersonName|textEmailAddress"
@@ -115,6 +151,7 @@
                 android:textStyle="normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,7 +166,8 @@
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textPersonName|textEmailAddress"
@@ -140,6 +178,7 @@
                 android:textStyle="normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,7 +193,8 @@
             app:boxStrokeWidth="1dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textPersonName|textEmailAddress"
@@ -165,6 +205,7 @@
                 android:textStyle="normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,6 +220,7 @@
                 android:layout_height="wrap_content"
                 android:text="Select Fule Type"
                 android:layout_margin="5dp"
+                android:textColor="@color/black"
                 android:textSize="20dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -301,7 +343,10 @@
             android:id="@+id/btn_continue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="Continue"/>
 
     </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

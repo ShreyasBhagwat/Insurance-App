@@ -5,8 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +21,7 @@
             android:layout_height="163dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/welcomUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -120,6 +124,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/carCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardElevation="4dp"
@@ -160,6 +165,7 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/bikeCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardElevation="4dp"
@@ -200,6 +206,7 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/mobileCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardElevation="4dp"
@@ -252,4 +259,5 @@
 
     </LinearLayout>
 
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

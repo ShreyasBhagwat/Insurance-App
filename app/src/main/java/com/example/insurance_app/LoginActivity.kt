@@ -11,7 +11,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     lateinit var sharedPreferences:SharedPreferences
     lateinit var sharedPreferencesEditor: Editor
     lateinit var sharedPreferencesLogin:SharedPreferences
@@ -56,11 +56,11 @@ class MainActivity : AppCompatActivity() {
             singUpLayout.visibility = View.VISIBLE
             loginFlag=false
             logInLayout.visibility = View.GONE
-            logIn.setTextColor(resources.getColor(R.color.pinkColor,null))
+            logIn.setTextColor(resources.getColor(R.color.mainAppBackgroundColor,null))
         }
         logIn.setOnClickListener {
             singUp.background = null
-            singUp.setTextColor(resources.getColor(R.color.pinkColor,null))
+            singUp.setTextColor(resources.getColor(R.color.mainAppBackgroundColor,null))
             logIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
             singUpLayout.visibility = View.GONE
             logInLayout.visibility = View.VISIBLE
@@ -98,14 +98,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToUserDashboardActivity() {
-        startActivity(Intent(this@MainActivity,UserDashboardActivity::class.java))
+        startActivity(Intent(this@LoginActivity,UserDashboardActivity::class.java))
         finish()
     }
 
     private fun addUserLoginData(userName: String, userPassword: String) {
 
         if (credentials.checkUsername(userName)) {
-            Toast.makeText(this@MainActivity, "Username already taken!", Toast.LENGTH_SHORT)
+            Toast.makeText(this@LoginActivity, "Username already taken!", Toast.LENGTH_SHORT)
                 .show()
         } else {
             credentials.addCredentials(userPassword, userPassword)
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             sharedPreferencesEditor.putString("LastSavedPassword", "")
 
             sharedPreferencesEditor.apply()
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this,LoginActivity::class.java))
             finish()
 //            sharedPreferencesLogin.edit().putBoolean("logged",true).apply();
         }
@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Incorrect credentials entered!", Toast.LENGTH_SHORT).show();
             }
         else {
-            Toast.makeText(this@MainActivity, "Login successful!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
             sharedPreferencesEditor.putString("LastSavedUsername", userName)
             sharedPreferencesEditor.putString("LastSavedPassword", userPassword)
             sharedPreferencesEditor.apply()

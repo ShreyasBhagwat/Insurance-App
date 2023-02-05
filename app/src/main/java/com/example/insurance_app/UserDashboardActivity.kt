@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.insurance_app.ViewModels.Help
 import com.example.insurance_app.ViewModels.Home
 import com.example.insurance_app.ViewModels.Policy
+import com.example.insurance_app.ViewModels.Profile
 import com.example.insurance_app.databinding.ActivityUserDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
