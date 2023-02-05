@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
-public interface VehicleDAO {
+interface VehicleDAO {
     @Insert
     suspend fun insertAll(vararg vehicles:Vehicle)
 

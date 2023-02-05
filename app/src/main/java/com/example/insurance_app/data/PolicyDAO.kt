@@ -14,7 +14,7 @@ interface PolicyDAO {
     @Delete
     suspend fun delete(policy:Policy)
 
-    @Query("SELECT * FROM policy order by PolicyName")
+    @Query("SELECT * FROM Policy order by PolicyName")
     fun getAll():LiveData<List<Policy>>
 
     @Update

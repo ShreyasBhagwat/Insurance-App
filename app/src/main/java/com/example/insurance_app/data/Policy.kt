@@ -14,6 +14,4 @@ data class Policy(
     @ColumnInfo(name = "Validity") val policyValidity:Int,
     @ColumnInfo(name = "Price") val price:Double,
     @ColumnInfo(name = "Status") val status:String
-){
-
-}
+)

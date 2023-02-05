@@ -3,12 +3,12 @@ package com.example.insurance_app.data
 import android.app.Application
 import androidx.lifecycle.LiveData
 
-public class PolicyRepository(application: Application) {
+class PolicyRepository(application: Application) {
     private val mPolicyDAO:PolicyDAO
     private val mGetAll: LiveData<List<Policy>>
 
     init {
-        val database = InsuranceDatabase.getInstance(application)
+        val database = InsuranceDatabase.getDatabase(application)
         mPolicyDAO = database.policyDao()
         mGetAll = mPolicyDAO.getAll()//LiveData<List<Policy>>
     }

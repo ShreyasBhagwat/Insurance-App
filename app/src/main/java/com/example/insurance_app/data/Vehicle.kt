@@ -17,5 +17,4 @@ data class Vehicle(
     @ColumnInfo(name = "YearOfManufacture") val vehicleYearOfManufacture:String,
     @ColumnInfo(name = "FuelType") val FuelType:String
     //name ,status ,price,
-) {
-}
+)
