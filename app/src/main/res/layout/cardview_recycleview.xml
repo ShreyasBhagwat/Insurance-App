@@ -7,38 +7,68 @@
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/teal_700"
+    android:background="@drawable/background_bike"
     android:layout_gravity="center"
     android:layout_margin="10dp"
     app:cardCornerRadius="12dp">
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <TextView
-        android:id="@+id/policyName"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Policy Name"/>
-    <TextView
-        android:id="@+id/yearOfPublish"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Policy Publish year"/>
+        android:orientation="vertical"
+        android:background="@drawable/background_bike"
+        android:layout_margin="8dp">
+
         <TextView
-            android:id="@+id/policystatus"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
+            android:id="@+id/policyName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Policy status"/>
-    <TextView
-        android:id="@+id/policyPrice"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Policy Price"/>
+            android:text="Policy Name"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/policyType"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Policy Type" />
+
+        <TextView
+            android:id="@+id/policyValidity"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Policy Validity" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/policyPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Price" />
+
+            <Button
+                android:id="@+id/priceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                android:text="Buy" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

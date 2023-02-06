@@ -1,6 +1,5 @@
 package com.example.insurance_app.ViewModels
 
-import android.media.session.PlaybackState.CustomAction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +11,13 @@ class ViewAdapter(private val dataSet:Array<String>):RecyclerView.Adapter<ViewAd
     class ViewHolder (view:View):RecyclerView.ViewHolder(view){
         val policyName:TextView
         val policyPrice:TextView
-        val policyStatus:TextView
-        val policyPublishYear:TextView
+        val policyType:TextView
+        val policyValidity:TextView
         init {
             policyName=view.findViewById(R.id.policyName)
             policyPrice=view.findViewById(R.id.policyPrice)
-            policyStatus=view.findViewById(R.id.policystatus)
-            policyPublishYear=view.findViewById(R.id.yearOfPublish)
+            policyType=view.findViewById(R.id.policyType)
+            policyValidity=view.findViewById(R.id.policyValidity)
         }
 
     }
@@ -31,8 +30,8 @@ class ViewAdapter(private val dataSet:Array<String>):RecyclerView.Adapter<ViewAd
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.policyName.text=dataSet[position]
-        holder.policyPublishYear.text=dataSet[position]
-        holder.policyStatus.text=dataSet[position]
+        holder.policyValidity.text=dataSet[position]
+        holder.policyType.text=dataSet[position]
         holder.policyPrice.text=dataSet[position]
 
     }

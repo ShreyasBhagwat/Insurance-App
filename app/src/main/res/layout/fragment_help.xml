@@ -16,7 +16,7 @@
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        android:id="@+id/cd1"
+        android:id="@+id/email"
 
         >
         <RelativeLayout
@@ -59,8 +59,8 @@
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        android:id="@+id/cd2"
-        android:layout_below="@+id/cd1"
+        android:id="@+id/phoneNumber"
+        android:layout_below="@+id/email"
         >
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         android:id="@+id/cd3"
-        android:layout_below="@+id/cd2"
+        android:layout_below="@+id/phoneNumber"
         >
         <RelativeLayout
             android:layout_width="wrap_content"

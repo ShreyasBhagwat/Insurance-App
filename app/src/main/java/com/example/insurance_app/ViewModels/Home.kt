@@ -1,5 +1,6 @@
 package com.example.insurance_app.ViewModels
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
@@ -39,6 +40,7 @@ class Home : Fragment() {
     lateinit var sharedPreferences:SharedPreferences
     lateinit var sharedPreferencesEditor:Editor
     lateinit var mainLinerLayoutForRegistrationNumber:LinearLayout
+    lateinit var userName:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -54,6 +56,9 @@ class Home : Fragment() {
         // Inflate the layout for this fragment
        val view=inflater.inflate(R.layout.fragment_home, container, false )
         val carbtn:CardView=view.findViewById(R.id.carCardView)
+        userName=view.findViewById(R.id.welcomeUser)
+        sharedPreferences= context!!.getSharedPreferences("CredentialsDB", Context.MODE_PRIVATE)
+        userName.text="Welcome "+sharedPreferences.getString("LastSavedUsername","defaultName")
         carbtn.setOnClickListener{
             val btn:String="Car"
             val view = layoutInflater.inflate(R.layout.registration_number_bottom_sheet_dialog, null)
