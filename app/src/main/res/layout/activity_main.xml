@@ -16,8 +16,8 @@
         android:gravity="center"
         android:text="Insurance App"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/insurancecolor"
-        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
         android:textStyle="bold|normal|italic"
         android:typeface="serif" />
     <androidx.cardview.widget.CardView
