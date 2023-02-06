@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/mainLinerLayoutForResistrationNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="2dp">
+
+        <TextView
+            android:id="@+id/titleForBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="30% off on you insurance"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!--text view for displaying course tracks-->
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="5dp">
+           <EditText
+               android:id="@+id/vehicleRegistrationNumber"
+               android:hint="Enter your vehicle number"
+               android:layout_width="match_parent"
+               android:textSize="22sp"
+               android:inputType="textCapSentences"
+               android:layout_height="wrap_content"/>
+
+           <ImageButton
+               android:id="@+id/goToEnterUserPolicyDetails"
+               android:layout_width="45sp"
+               android:layout_height="45sp"
+               android:layout_alignParentRight="true"
+               android:layout_centerVertical="true"
+               android:layout_marginRight="10dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/next" />
+
+       </RelativeLayout>
+
+        <!--text view for displaying course duration-->
+        <Button
+            android:id="@+id/newInsuranceBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Looking for new Insurance?"
+            android:background="@color/tansparentColor"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
