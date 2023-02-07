@@ -45,31 +45,20 @@ viewModel.usersList
         data = ViewModelProvider(this)[InsuranceViewModel::class.java].getAllPolicies()
 
         
-//        PolicyList1=PolicyListData().list
+
         data.observe(this, Observer {
             PolicyList1= it
             Log.d("Data3",PolicyList1.toString())
             val adapter=ViewAdapter(PolicyList1)
             recyclerView.adapter=adapter
 
-//            adapter.submitList(PolicyList1)
+
         })
 
         Log.d("User Datalist-1",PolicyList1.toString())
-//        val adapter=ViewAdapter(PolicyList1)
-//        recyclerView.adapter=adapter
-
-/*
-vm = ViewModelProvider(this)[InsuranceViewModel::class.java]
-val data: LiveData<List<Policy>> = vm.getAllPolicies()
-Log.d("PolicyList ",vm.getAllPolicies().toString())
-Log.d("PolicyList ",data.toString())
-val data: LiveData<List<Policy>> = vm.getAllPolicies().observe(this, Observer{
-Log.i("Policies observed","$it")
-})
 
 
-*/
+
 
 
 

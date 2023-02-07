@@ -25,9 +25,7 @@ open class UserDashboardActivity : AppCompatActivity() {
     private lateinit var data:LiveData<List<Policy>>
     var policyListData=PolicyListData()
     var PolicyList1:List<Policy> = mutableListOf<Policy>()
-//    private lateinit var viewAdapter: RecyclerView.Adapter<*>
-//    private lateinit var recyclerView: RecyclerView
-//    private lateinit var viewManager: RecyclerView.LayoutManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,44 +33,17 @@ open class UserDashboardActivity : AppCompatActivity() {
         vm = ViewModelProvider(this)[InsuranceViewModel::class.java]
 
         data= vm.getAllPolicies()
-//        Log.d("Data",data.toString())
+
         data.observe(this, Observer {
             PolicyList1= it
-//            policyListData.list=it
+
             Log.d("Data2",PolicyList1.toString())
-//            Log.d("Listform setter",policyListData.toString())
+
         })
         Log.d("Bahar se Data2",PolicyList1.toString())
 
 
-/*//            adapter.submitList(it)
 
-//        data.observe(this,  Observer{
-////            viewAdapter.notifyDataSetChanged()
-//            PolicyList1= it
-//            Log.d("Data2",PolicyList1.toString())
-
-
-//            val view = layoutInflater.inflate(R.layout.activity_policy_list, null)
-
-
-recyclerView=view.findViewById<RecyclerView?>(R.id.PolicyListRecyclerView).apply {
-layoutManager=viewManager
-adapter=viewAdapter
-}
-PolicyList1 = emptyList<Policy>()//listOf(Policy())//List<Policy>
-data.observe(this, Observer {
-//            viewAdapter.notifyDataSetChanged()
-PolicyList1= it
-Log.d("Data2",PolicyList1.toString())
-
-})
-vm.getAllPolicies().observe(this, Observer {
-Log.i("Policies observed","$it")
-
-//            ViewAdapter.submitList(it)
-})
-*/
 
         binding = ActivityUserDashboardBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_user_dashboard)
