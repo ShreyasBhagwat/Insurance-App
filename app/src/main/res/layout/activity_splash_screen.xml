@@ -26,7 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/splashscreen_background" />
+        app:srcCompat="@drawable/splashscreen_background"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
