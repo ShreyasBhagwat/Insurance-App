@@ -17,8 +17,9 @@ interface PolicyDAO {
 
 
 
-    @Query("SELECT * FROM Policy order by PolicyProvider")
+    @Query("SELECT * FROM Policy")
     fun getAll():LiveData<List<Policy>>
+
 
     @Query("SELECT * FROM Policy WHERE CATEGORY = :policyCategory")
     fun getByCategory(policyCategory: String):LiveData<List<Policy>>

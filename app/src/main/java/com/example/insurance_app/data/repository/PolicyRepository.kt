@@ -47,6 +47,7 @@ class PolicyRepository(application: Application) {
     }
 
     fun getAllPolicies():LiveData<List<Policy>>{
+
         return mGetAll
     }
 

@@ -12,6 +12,7 @@
        android:layout_height="wrap_content"
        android:text="Drawer"/>
    <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/PolicyListRecyclerView"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        tools:listitem="@layout/cardview_recycleview"/>

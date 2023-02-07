@@ -1,6 +1,7 @@
 package com.example.insurance_app.data.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.example.insurance_app.data.entity.Mobile
@@ -12,7 +13,7 @@ import com.example.insurance_app.data.repository.PolicyRepository
 import com.example.insurance_app.data.repository.UserRepository
 import com.example.insurance_app.data.repository.VehicleRepository
 
-class InsuranceViewModel(app:Application):AndroidViewModel(app) {
+data class InsuranceViewModel(val app:Application):AndroidViewModel(app) {
 
     private val pRepository = PolicyRepository(app)
     private val vRepository = VehicleRepository(app)
@@ -21,7 +22,7 @@ class InsuranceViewModel(app:Application):AndroidViewModel(app) {
 
 
 
-    private val allPolicies = pRepository.getAllPolicies()
+//    private val allPolicies = pRepository.getAllPolicies()
     private val allVehicles = vRepository.getAllVehicles()
     private val allUsers = uRepository.getAllUsers()
     private val allMobile = mRepository.getAllMobiles()
@@ -73,7 +74,10 @@ class InsuranceViewModel(app:Application):AndroidViewModel(app) {
 
     //Get all functions
     fun getAllPolicies():LiveData<List<Policy>>{
-        return allPolicies
+
+        return pRepository.getAllPolicies()
+
+
     }
     fun allVehicles():LiveData<List<Vehicle>>{
         return allVehicles
