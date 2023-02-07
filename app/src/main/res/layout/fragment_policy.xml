@@ -62,6 +62,7 @@
         android:layout_marginTop="30dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/carCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardElevation="4dp"
@@ -74,7 +75,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_car1">
+                android:background="@drawable/background_car">
 
                 <ImageView
                     android:id="@+id/carimage"
@@ -86,7 +87,7 @@
                     android:layout_marginEnd="10dp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/carimage1" />
+                    android:src="@drawable/carimage" />
 
                 <TextView
                     android:layout_below="@+id/carimage"
@@ -102,6 +103,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/bikeCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardElevation="4dp"
@@ -114,7 +116,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_bike1">
+                android:background="@drawable/background_bike">
 
                 <ImageView
                     android:id="@+id/bikeimage"
@@ -126,7 +128,7 @@
                     android:layout_marginEnd="10dp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/bikeimage1" />
+                    android:src="@drawable/bikeimage" />
 
                 <TextView
                     android:layout_below="@+id/bikeimage"
@@ -142,6 +144,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/mobileCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardElevation="4dp"
@@ -154,7 +157,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_mobile1">
+                android:background="@drawable/background_mobile">
 
                 <ImageView
                     android:id="@+id/mobileimage"
@@ -166,7 +169,7 @@
                     android:layout_marginEnd="10dp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/mobileimage1" />
+                    android:src="@drawable/mobileimage" />
 
                 <TextView
                     android:layout_below="@+id/mobileimage"
