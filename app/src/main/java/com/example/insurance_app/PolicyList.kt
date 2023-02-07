@@ -18,13 +18,10 @@ import com.example.insurance_app.data.viewmodel.InsuranceViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class PolicyList : AppCompatActivity() {
-    private lateinit var seeMore:Button
     lateinit var recyclerView: RecyclerView
 
     private lateinit var data:LiveData<List<Policy>>
     var PolicyList1:List<Policy> = mutableListOf<Policy>()
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,41 +31,16 @@ class PolicyList : AppCompatActivity() {
         
         recyclerView.layoutManager=LinearLayoutManager(this)
 
-/*
-UserDA= UserDashboardActivity()
-vm =
-UserDA.vm
-dataList= UserDA.passInstance()
-viewModel.usersList
-*/
-
         data = ViewModelProvider(this)[InsuranceViewModel::class.java].getAllPolicies()
-
-        
 
         data.observe(this, Observer {
             PolicyList1= it
             Log.d("Data3",PolicyList1.toString())
             val adapter=ViewAdapter(PolicyList1)
             recyclerView.adapter=adapter
-
-
         })
 
         Log.d("User Datalist-1",PolicyList1.toString())
 
-
-
-
-
-
-       seeMore=findViewById(R.id.seeMore)
-       seeMore.setOnClickListener{
-           val view = layoutInflater.inflate(R.layout.detail_policy_drawer, null)
-           val dialog = BottomSheetDialog(this)
-           dialog.setCancelable(true)
-           dialog.setContentView(view)
-           dialog.show()
-       }
     }
 }

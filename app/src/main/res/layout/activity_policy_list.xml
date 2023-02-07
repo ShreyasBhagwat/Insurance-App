@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PolicyList"
     android:orientation="vertical">
-   <Button
-       android:id="@+id/seeMore"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Drawer"/>
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/PolicyListRecyclerView"
        android:layout_width="match_parent"

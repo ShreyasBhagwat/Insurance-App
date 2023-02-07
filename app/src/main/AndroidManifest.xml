@@ -12,6 +12,13 @@
         android:theme="@style/Theme.InsuranceApp"
         tools:targetApi="31">
         <activity
+            android:name=".BuyPolicyActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".UserDashboardActivity"
             android:exported="false">
             <meta-data
@@ -42,4 +49,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
