@@ -85,7 +85,17 @@ class EnterDetails : AppCompatActivity() {
                 Toast.makeText(this, "Car's Year of Manufacturing date is mandatory field", Toast.LENGTH_SHORT).show()
             }
             else{
-                carDetalisArray= arrayOf(ItemNumber.text.toString(),vehicleCompany.text.toString(),vehicleModel.text.toString(),vehicleEngineNumber.text.toString(),vehicleChassisNumber.text.toString(),vehicleYearOfMgf.text.toString())
+                carDetalisArray= arrayOf(
+                    ItemNumber.text.toString(),
+                    vehicleCompany.text.toString(),
+                    vehicleModel.text.toString(),
+                    vehicleEngineNumber.text.toString(),
+                    vehicleChassisNumber.text.toString(),
+                    vehicleYearOfMgf.text.toString()
+                )
+
+
+
                 for(i in carDetalisArray){
                     Log.d("EnterUserDetails ",i)
                 }
